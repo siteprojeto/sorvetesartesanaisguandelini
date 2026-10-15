@@ -96,41 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. ANIMAÇÕES AO ROLAR A PÁGINA
   // =====================================
 
-  const revealElements = document.querySelectorAll(".reveal");
-
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  if ("IntersectionObserver" in window && !prefersReducedMotion) {
-    document.documentElement.classList.add("js-enabled");
-
-    const observer = new IntersectionObserver(
-      (entries, currentObserver) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            currentObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
-      }
-    );
-
-    revealElements.forEach((element) => {
-      observer.observe(element);
-    });
-  } else {
-    // Mantém o conteúdo visível em navegadores sem suporte
-    // ou quando o usuário prefere movimento reduzido.
-    revealElements.forEach((element) => {
-      element.classList.add("visible");
-    });
+  
   }
-
+a
   // =====================================
   // 5. ANO AUTOMÁTICO NO RODAPÉ
   // =====================================
@@ -188,4 +156,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Site Guandelini carregado com sucesso!");
 });
-
