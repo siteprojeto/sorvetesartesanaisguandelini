@@ -1239,3 +1239,14 @@ p {
 }
 
 .js-enabled .reveal.v
+
+.reveal,
+.js-enabled .reveal,
+.js-enabled .reveal.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
